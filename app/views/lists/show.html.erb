@@ -1,0 +1,12 @@
+<div class="container">
+  <h1><%= @list.name %></h1>
+  <% @bookmarks.each do |item| %>
+    <p><%= item.comment %></p>
+    <%= link_to "delete?",
+                bookmark_path(item),
+                method: :delete,
+                data: { confirm: "are you surreee?" } %>
+  <% end %>
+  <%= link_to "new bookmark", new_list_bookmark_path(@list) %>
+  <%= link_to "< back", lists_path %>
+</div>

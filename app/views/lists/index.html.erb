@@ -1,0 +1,21 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= asset_url("ghibli2.png") %>)">
+  <div class="container">
+    <h1>Save any kind of movies 🎥</h1>
+  </div>
+</div>
+<div class="container">
+  <h1>My lists</h1>
+  <div class="row">
+    <% @lists.each do |item| %>
+      <div class="col-4">
+        <%= link_to item do %>
+          <div class="image-card" style='background-image: linear-gradient(rgba(0,0,0,.1), rgba(0,0,0,.2)), url(<%= asset_url("ghibli.jpeg") %>)'>
+            <%= item.name %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%#  %>
